@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="myDiv" style="position: relative; width: 400px; height: 400px; border: 1px solid black;">
+        <button id="myButton" style="position: absolute;">Botão</button>
+      </div>
+      
+      <script>
+        // Seleciona a div e o botão pelo ID
+        var div = document.getElementById("myDiv");
+        var button = document.getElementById("myButton");
+      
+        // Define a largura e altura da div pai
+        var divWidth = div.offsetWidth;
+        var divHeight = div.offsetHeight;
+      
+        // Define uma função para mover o botão aleatoriamente
+        function moveButton() {
+          // Gera posições aleatórias para o botão
+          var randomX = Math.floor(Math.random() * divWidth);
+          var randomY = Math.floor(Math.random() * divHeight);
+      
+          // Define a nova posição do botão
+          button.style.left = randomX + "px";
+          button.style.top = randomY + "px";
+        }
+      
+        // Adiciona um manipulador de eventos para o clique no botão
+        button.onclick = function() {
+          moveButton();
+        }
+      
+        // Adiciona um manipulador de eventos para o mouse sobre o botão
+        button.onmouseover = function() {
+          moveButton();
+        }
+      </script>
+</body>
+</html>
